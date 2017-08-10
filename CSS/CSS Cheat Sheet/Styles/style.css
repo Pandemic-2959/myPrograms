@@ -1,0 +1,143 @@
+/*for everything everystyle at the top in the * braces mention whatever u want to apply for whole  page*/
+/*
+*{
+	margin:0;
+	padding:0;
+}
+*/
+body{
+	background-color:#f4f4f4;
+	color:#555555;
+
+	font-family: Arial,Helvetica,sans-serif;
+	font-size:20px;
+	font-weight:normal;
+	/*can be a number like 400;or cn be bold*/
+
+	/*Shorter way to to above thing*/
+	/*Same as above*/
+	font: normal 20px Arial, Helvetica , sans-serif;
+
+	/*to manage spacing between lines*/
+	line-height:1.6em;
+	margin:0;
+}
+/* to apply css to all links*/
+a{
+	text-decoration: none;
+	color:#000;
+}
+
+a:hover{
+	color:red;
+}
+a:active{
+	color:green;
+}
+a:visited{
+	color:blue;
+}
+/* to target a class we use a dot*/
+.container{
+	/* width we can even use px
+	note: with % width auto adjust nicely when u change th size of the window
+	     but this doesnot happen with px*/
+	width:80%;
+	/* margin : auto puts even amount of margin on all sides*/
+	margin:auto;
+}
+.button{
+	background-color:#333;
+	color: #fff;
+	padding:10px 15px;
+	border:none;
+}
+.button:hover{
+	background-color:red;
+	color:#fff;
+}
+.box-1{
+	background-color:#333; 
+	color:#fff;
+	/* border-right : size color type/style;*/
+	border-right: 5px red solid;
+	border-left: 5px red solid;
+	border-top: 5px red solid;
+	border-bottom: 5px red solid;
+	/*--OR--*/
+	/* in case border on all four sides is same*/
+	border: 5px red solid;
+	/* u can even target specific property of border like*/
+	border-width: 3px;
+	border-bottom-width:3px;
+	/*styles of border :- solid ,dotted ,dashed ,double,etc*/
+	border-top-style:dotted;
+	border-bottom-style:solid;
+	border-left-style:dashed;
+	border-right-style:double;
+
+	padding-top:20px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:20px;
+	/*--OR--*/
+	padding :20px;
+
+	margin-top:20px;
+	/*--OR--*/
+	/*this makes margin as 20px top and bottom and 0 on left and right*/
+	margin:20px 0;
+}
+.box-1 h1{
+	/* this will edit on the h1 within the class box-1*/
+		font-family:Tahoma;
+		font-weight:800;
+		font-style:italic;
+		text-decoration:underline;
+		text-transform:uppercase;
+		letter-spacing:0.2em;
+		word-spacing:1em;
+
+}
+.box-2{
+	border:3px dotted #ccc;
+	padding:20px;
+	margin:20px 0;
+}
+.categories{
+	border: 1px #ccc solid;
+	padding:10px;
+	border-radius:15px;
+
+}
+.categories h2{
+	text-align:center;
+
+}
+.categories ul{
+	text-align:center;
+	padding:20px;
+	list-style:square;
+	list-style:none;
+
+}
+.categories li{
+	padding-bottom:4px;
+	border-bottom:dotted 1px #333;
+	list-style-image:url("../iron2.jpg");
+}
+.my-form{
+	padding:20px;
+}
+.my-form.form-group{
+	padding-bottom:15px;
+}
+.my-form label{
+	display:block;
+}
+.my-form input[type="text"], .my-form input[type="email"], .my-form textarea{
+	padding:8px;
+	width:100%;
+}
+
+
