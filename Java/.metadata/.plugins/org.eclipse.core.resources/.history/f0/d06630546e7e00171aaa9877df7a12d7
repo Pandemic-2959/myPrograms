@@ -1,0 +1,11 @@
+package AllInOne;
+
+import lesson1.Bank;
+
+public class Bank_XYZ extends Bank 
+{
+	int getInterest()
+	{
+		return 6;
+	}
+}

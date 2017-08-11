@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import java.util.ArrayList;
+import java.util.Iterators;
+import java.util.List;
+public class ArrayListCodes {
+	public static void ArrayList_Declare_Traverse_Iterator() {
+		// create ArrayList
+		List a = new ArrayList();
+		//Create Elements to ArrayList
+		a.add(1);
+		a.add(2);
+		a.add(3);
+		a.add(4);
+		//Using Iterator to Display Elements of ArrayList
+		Iterator itr = a.iterator();
+		while(itr.hasNext())
+			System.out.println(itr.next());
+		//Using java 8 feature 
+		a.forEach((temp) ->{System.out.println(temp);});
+		
+		
+
+		
+	}
+
+	public static void main(String[] args) {
+		ArrayList_Declare_Traverse_Iterator();
+		
+	}
+
+}
