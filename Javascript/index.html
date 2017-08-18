@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learning Javascript</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- for linking a css file 
+		<script src="main.js"></script>-->
+	</head>
+	<body onload ="showDate1(this)" id= "main-body">
+		<div class="header">
+			<h1 id = "heading">Learning Javascript</h1>
+			<p>With Pandemic-2959</p>
+		</div>
+
+
+		<script type="text/javascript">
+			//an alert box
+			//alert('hey');
+			var n1=2;
+			var n2=5;
+			//alert(n1+n2);
+			var n3='2';
+			var n4='5';
+			//alert('this is a '+(n1+n2));
+		</script>
+		<script type="text/javascript">
+			//arrays
+			var arr = new Array(1,2,3);
+			var initializeArrayLikeThis = [];
+			var orLikeThis = [1,2,3];
+			var color = ['red','grey','blue'];
+			var arr2 = [1,2,'letter'];
+
+			color[3] ='green';
+			color.push('purple'); 
+			//alert(color.length);
+			//alert(color.sort());
+			//alert(color.reverse());	
+			//alert(color[3]);  //print everything
+			// alert(color[1]); //print using index
+		</script>
+		<script type="text/javascript">
+			//loops
+			for(var i=0;i<5;i++){
+				console.log(i);
+			}
+			var i=0;
+			while(i<5){
+				console.log(i);
+				i++;	
+			}
+			arr.forEach(function(i) {
+				console.log(i);
+			});
+		</script>
+		<script type="text/javascript">
+			//conditional
+			//use of ===
+			//it not only compare the value but also the data type of the variables that are compared
+			//switch can have string even as condition variable
+		</script>
+		<script type="text/javascript">
+			//object literal
+			var person = {
+				firstName: 'john',
+				lastName: 'haha',
+				age:70,
+				hobbies: ['books','music'],
+				address: {
+					street:'555',
+					city: 'Ghaziabad',
+					state: 'UP'
+				},
+				fullName: function(){
+				return this.firstName +" "+this.lastName;
+				}
+
+			}
+			console.log(person.firstName);
+			console.log(person.hobbies[1]);
+			console.log(person.address);
+			console.log(person.address.state);
+			console.log(person.fullName());
+
+			//object constructor
+			var apple = new Object();
+			apple.color = 'red';
+			apple.shape = 'round';
+			apple.describe = function(){
+				return 'An apple is of color'+this.color+'shape'+this.shape;
+			}
+			console.log(apple.describe());
+
+			//constructor pattern
+			function Fruit(name,color,shape){
+				this.name = name;
+				this.color= color;
+				this.shape = shape;
+
+				this.describe = function(){
+					return 'a' +this.name+this.color+this.shape;
+				}
+			}
+			var apple = new Fruit('apple','red','round');
+			var melon = new Fruit('melon','green','round');
+			console.log(melon.describe());
+
+			//arrays of object
+			var users =[
+			{
+				name:'john Doe',
+				age:30
+			},
+			{
+				name:'ron oak',
+				age:35
+			},
+			{
+				name:'mark dark',
+				age:50
+			}
+			];
+			console.log(users[0]);
+			console.log(users[1].name);
+		</script>
+		<!--Events-->
+		<div class="container">
+			<!-- onclick -->
+			<button onclick="doClick()">Click Me1</button>
+			<br>
+
+			<button onclick="this.innerHTML ='You Clicked'">Click Me2</button>
+			<br>
+
+			<button onclick="changeText1(this)">Click Me3</button>
+			<br>
+
+			<button onclick="changeText2()">Click Me4</button>
+			<br>
+
+			<h3 id = "time"></h1>
+			<button onclick="showDate1()">Show Date1</button>
+			<br>
+			<!-- onmouseover -->
+			<button onmouseout="clearDate(this)"onmouseover = "showDate2(this)">Show Date2</button>
+			
+		</div>
+		<script type="text/javascript">
+			function doClick(){
+				alert('You Clicked');
+			}
+			function changeText1(id){
+				id.innerHTML = 'You Clicked';
+			}
+			function changeText2(){
+				var heading = document.getElementById('heading');
+				heading.innerHTML = 'You Clicked';
+			}
+			function showDate1(){
+				var time = document.getElementById('time');
+				time.innerHTML = Date();
+			}
+			function showDate2(id){
+				id.innerHTML=Date();
+
+			}
+			function clearDate(id){
+				id.innerHTML='Show Date2';
+
+			}
+
+
+		</script>
+
+		<div class="container">
+			<form method="post" action="something.php" name="myForm">
+			
+			<br>
+			<div>
+				<label>Background</label>
+				<select name="background" id="background" onchange ="changeBackground(this)">
+				<option value="red">Red</option>
+				<option value="green">Green</option>
+				<option value="blue">Blue</option>
+			</select>
+			</div>
+
+			</form>
+			<script type="text/javascript">
+				function changeBackground(id){
+					console.log(id.value);
+					var heading = document.getElementById('heading');
+					heading.style.backgroundColor =id.value; 	
+					}
+
+			</script>
+
+			<br>
+			<br>
+			<br>
+			<form name="myform"method="post" action = "something.php" onsubmit="return validateForm()">
+				<div>
+					<label>First Name</label>
+					<input type="text" name="firstname" id="firstname" />
+				</div>
+				<br>
+				<div>
+					<label>Last Name</label>
+					<input type="text" name="lastname" id="lastname" />
+				</div>
+				<br>
+				<div>
+					<input type="submit" value="Submit" />
+				</div>
+
+
+			</form>
+			<script type="text/javascript">
+				function validateForm(){
+					var firstName = document.forms["myform"]["firstname"].value;
+					//can also do this by getElementById
+					if(firstName == null || firstName ==""){
+						alert("First name is required");
+						return false;
+					}
+					if(firstName.length<3 ){
+						alert("First name require atleast 3 letters");
+						return false;
+					}
+
+				}
+
+			</script>
+
+			
+		</div>
+
+	</body>
+</html>

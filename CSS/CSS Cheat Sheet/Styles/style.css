@@ -12,7 +12,7 @@ body{
 	font-family: Arial,Helvetica,sans-serif;
 	font-size:20px;
 	font-weight:normal;
-	/*can be a number like 400;or cn be bold*/
+	/*can be a number like 400;or can be bold*/
 
 	/*Shorter way to to above thing*/
 	/*Same as above*/
@@ -55,6 +55,10 @@ a:visited{
 .button:hover{
 	background-color:red;
 	color:#fff;
+}
+/* made to clear any floats above it*/
+.clr{
+	clear:both;
 }
 .box-1{
 	background-color:#333; 
@@ -124,7 +128,7 @@ a:visited{
 .categories li{
 	padding-bottom:4px;
 	border-bottom:dotted 1px #333;
-	list-style-image:url("../iron2.jpg");
+	list-style-image:url("../images/iron2.jpg");
 }
 .my-form{
 	padding:20px;
@@ -139,5 +143,77 @@ a:visited{
 	padding:8px;
 	width:100%;
 }
+.block{
+	/* -> */
+	float:left;
+	width:33.3%;
+	border:1px solid #ccc;
+	padding :10px;
+	/* -> this area puts the blocks in different but we want them in same line*/
+	/* for this we use a property called : box-sizing */
+	/* what it does is it takes everything(including border,padding) and aply it in 33.3%
+	   and not just text in 33.3% */
+	box-sizing:border-box;
+}
+#main-block{
+	float:left;
+	width:70%;
+	padding:15px;
+	box-sizing : border-box;
+}
+#sidebar{
+	float:right;
+	width:30%;
+	background-color:#333;
+	color:#fff;
+	padding:15px;
+	box-sizing : border-box; 
+}
+
+.p-box {
+	width:800px;
+	height:500px;
+	border: 1px solid #000;
+	margin-top:30px; 
+	padding-left: 30px;
+	position:relative;
+	background-image:url("../images/bg.jpg");
+	margin-bottom:50px;
+	background-position: 0px 800px;
+	background-position: center center;
+	/* in background-position: we can even use %*/
+	/* if you do not want the image in continuation
+	 then can use background-repeat: no-repeat;*/
+
+
+}
+
+.p-box h1{
+	position:absolute;
+	top:80px;
+	left:150px;
+}
+.p-box h2{
+	position:absolute;
+	bottom: 30px;
+	right: 400px;
+}
+.fix-me{
+	position:fixed;
+	top:400px;
+}
+.my-list li:first-child{
+	background: red;
+}
+.my-list li:last-child{
+	background: blue;
+}
+.my-list li:nth-child(3){
+	background: yellow;
+}
+.my-list li:nth-child(even){
+	background: grey;
+}
+
 
 

@@ -10,7 +10,10 @@ public class Basics {
 	public static void main(String[] args) {
 		int[] arr = {1,2,3};
 	// ARRAY
-		for(int x:arr) System.out.println(x);
+		for(int x:arr)
+		{
+			System.out.println(x);
+		}
 	//STRING
 		String str1 = "HelloWorld";
 		int x = str1.length();
