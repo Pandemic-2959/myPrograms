@@ -1,0 +1,2 @@
+javac ./Git/Java/Others/Others/test.java
+java -cp ./Git/Java/Others/Others test

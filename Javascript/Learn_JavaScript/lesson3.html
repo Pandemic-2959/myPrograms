@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<!-- 1. Page Redirection
+	 2. Dial Box
+	 	- Alert Box
+	 	- Confirmation Box
+	 3. Page Printing
+	 continue 1:56
+-->
+<head>
+	<title>lesson3</title>
+</head>
+<body>
+	<!-- Page Redirection -->
+	<form>
+		<input type ="button" onclick="redirect()" value="redirect">
+	</form>
+	<script type="text/javascript">
+	function redirect() {
+		window.location = "https://www.google.com";
+	}
+	//document.write("You will be redirected to google page  in seconds");
+	//setTimeout("redirect()",5000);
+	</script>
+	<br>
+
+
+	<!-- Dial Box -->
+	<form>
+		<!-- Alert box -->
+		<input type ="button" onclick ="alertbox(this)" value ="alert box">
+		<br>
+		<br>
+		<!-- Confirmation Box -->
+		<input type ="button" onclick ="getConfirmation()" value = "confirmation box">
+		<br>
+		<br>
+		<!--Pompt Box -->
+		<input type ="button" onclick="getVal()" value="prompt box">
+	</form>
+	<h2 id="headConfirm"></h2>
+	<h2 id ="prompt"></h2>
+
+	<script type="text/javascript">
+		function alertbox(id) {
+			alert("Warning message");
+			id.value ="you have been warned";
+		}
+
+		function getVal(){
+			var val = prompt("Enter your name");
+			document.getElementById("prompt").innerHTML="you entered "+val;
+		}
+		
+		function clearhead(){
+			document.getElementById("headConfirm").innerHTML="";
+		}
+		function getConfirmation(){
+			var conf = confirm("Do you wan to confirm");
+			if(conf == true){
+				document.getElementById("headConfirm").innerHTML="you have confirmed";
+				setTimeout(clearhead,3000);
+				return true;
+			}
+			else{
+				document.getElementById("headConfirm").innerHTML="you have not confirmed";
+				setTimeout(clearhead,3000);
+				return false;
+			}
+		}
+	</script>
+
+	<!--Page Printing -->
+	<form>
+		<input type ="button" onclick ="printThisPage()" value ="print this page">
+	</form>
+	<script type="text/javascript">
+		function printThisPage(){
+			window.print();
+		}
+	</script>
+</body>
+</html>

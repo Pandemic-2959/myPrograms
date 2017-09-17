@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<!--
+1. comments in javascript 
+2. two ways to use javascript by writing code in html page itself 
+   one in head in other in body as shown 
+3. Different ways to display contents in html using javascript 
+4. Javascript variables 
+5. Arrays 
+6. Conditionals 
+	i.   if else
+	ii.  switch
+	iii. for loop
+	iv.  while loop
+	v.   do while loop
+	vi.  for...in loop
+7.  jump statements-> break,continue
+-->
+<head>
+	<title>Lesson1</title>
+	<script type="text/javascript">
+	alert("hey");
+	</script>
+</head>
+<body>
+	<p id = "demo1"></p>
+	<br>
+	<p id = "demo2"></p>
+
+	<!--    1 ,2     -->
+	<h2>   1 ,2</h2>
+	<script type="text/javascript">
+		//This is a comment
+		/* this is 
+		multiline comment */
+		document.getElementById("demo1").innerHTML = "Hello World";
+	</script>
+
+	<!--    3     -->
+	<h2>	3</h2>
+	<script type="text/javascript">
+		// 1. using alert box
+		alert(1/2);
+		// 2. using write function
+		document.write(2+3);
+		document.write("<br>");
+		// 3.writing at a p[articular place in html page using innerHTML
+		document.getElementById("demo2").innerHTML = 5+6;
+	</script>
+
+	<!--    4     -->
+	<h2>	4</h2>
+	<script type="text/javascript">
+		var a = 9;
+		var b = 8;
+		document.write("  "+(a+b));
+		document.write("<br>"); 
+		var c;
+		document.write("  "+c);  // undefined
+		document.write("<br>");
+	</script>
+
+	<!--    5     -->
+	<h2>	5</h2>
+	<script type="text/javascript">
+		//Arrays
+		var arr = new Array(1,2,3);
+		var initializeArrayLikeThis = [];
+		var orLikeThis = [1,2,3];
+		var color = ['red','grey','blue'];
+		var arr2 = [1,2,'letter'];
+		color[3] ='green';
+		color.push('purple'); 
+		document.write(color.length+"<br>");
+		document.write(color.sort()+"<br>");//changes the actual color array
+		document.write(color.reverse()+"<br>");	
+		document.write(color+"<br>");  //print everything
+		document.write(color[1]+"<br>"); //print using index
+	</script>
+	
+	<!--    6     -->
+	<h2>	6</h2>
+	<script type="text/javascript">
+		
+		//If else
+		var ch ='a'; 
+		if(ch=='a'){
+			ch='1';
+		}
+		else if(ch=='b'){
+			ch='2'
+		}
+		else{
+			ch = '3';
+		}
+		document.write("\n the ch is now"+ch);
+		document.write("<br>");
+
+		//Switch
+		var grade = 'a';
+		switch(grade){
+			case 'a':
+			document.write("excellent");
+			break;
+			case 'b':
+			document.write("good");
+			break;
+			case 'c':
+			document.write("fine");
+			break;
+			default:
+			document.write("grade not applicable");
+		}
+		document.write("<br>");
+
+		//for loop
+		for(var i=0;i<5;i++){
+			document.write(i+"  ");//whatever spaces u provide but it prints only on space in actual page
+		}
+		document.write("<br>");
+
+		//while loop
+		i=0;
+		while(i<5){
+			document.write(i+"  ");
+			i++;	
+		}
+		document.write("<br>");
+
+		//do-while loop
+		i =0;
+		do{
+			document.write(i+"  ");
+			i++;
+		}
+		while(i<5);
+		document.write("<br>");
+
+		//for...in loop
+		for(var i in navigator){
+			document.write(i+"  ");
+		}
+		document.write("<br>");
+	</script>
+
+	<!--    7     -->
+	<script type="text/javascript">
+		//break;
+		for(var i =0;;i++){
+			document.write(i+"  ");
+			if(i==3){
+				document.write("break statement executed <br>");
+				break;
+			}
+			else{
+				document.write("continue statement executed <br>")
+			}
+		}
+	</script>
+</body>
+</html>

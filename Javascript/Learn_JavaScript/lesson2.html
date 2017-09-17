@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<!--
+	1. Function
+	2. Events
+		- onclick
+		- onchange
+		- 
+	
+-->
+<head>
+	<title>lesson2</title>
+</head>
+<body>
+	<!-- Events -->
+
+	<!-- onclick event -->
+	<button type = "button" onclick="showDate()">The Date :</button>
+	<button type = "button" onclick="this.innerHTML = Date()">Show Date:</button>
+	<p id="time"></p>
+	<script type="text/javascript">
+	function showDate(){
+		document.getElementById('time').innerHTML = Date();
+	}
+	</script>
+
+	<!-- onchange event -->
+	<label>Enter Your Name : </label>
+	<input type="text" id="name" onchange="changeToCapital(this)">
+
+	<p id="car-para">Select from the list</p>
+	<select id ="car" onchange ="carFun(this)">
+		<option>Audi</option>
+		<option>Volvo</option>
+		<option>BMW</option>
+		<option>Mercedes</option>
+	</select>
+
+	<script type="text/javascript">
+		function changeToCapital(x) {
+			x.value=x.value.toUpperCase();
+		}
+
+		function carFun(id) {
+			document.getElementById('car-para').innerHTML="You selected : "+id.value;
+		}
+	</script>
+	<br>
+	<br>
+
+
+	<!-- onmouseover and onmouseout-->
+	<img src ="image/img1.jpg" height ="50px" width ="100px" onmouseover ="bigimg(this)"  onmouseout ="originalimg(this)">
+	<br>
+	<br>
+	<h3 onmouseover ="changeText(this)" onmouseout="originalText(this)">heading</h3>
+	<script type="text/javascript">
+		function bigimg(id){
+			id.style.height = "200px";
+			id.style.width = "250px";
+		}
+		function originalimg(id){
+			id.style.height = "50px";
+			id.style.width = "100px";
+		}
+		function changeText(id){
+			id.style.color = "red";
+			id.style.background = "green";
+			id.style.fontSize = "30px"
+		}
+		function originalText (id) {
+			id.style.color = "initial";
+			id.style.background = "initial";
+			id.style.fontSize = "initial";
+		}
+	</script>
+</body>
+</html>

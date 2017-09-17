@@ -1,0 +1,8 @@
+g++ ./Git/C_and_Cpp/LearnCpp/Others/t.cpp
+./Git/C_and_Cpp/LearnCpp/Others/a.out
+
+
+or 
+change the dir to the dir of the file 
+and then simply g++ filename.cpp
+or g++ -o outputfilename filename.cpp
